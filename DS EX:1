@@ -1,0 +1,20 @@
+import pandas as pd
+df = pd.read_csv("data.csv")
+print("First 5 rows:")
+print(df.head())
+print("\nDataset Info:")
+print(df.info())
+df.fillna(df.mean(numeric_only=True), inplace=True)
+filtered_df = df[df["Age"] > 30]
+print("\nFiltered Data (Age > 30):")
+print(filtered_df.head())
+df["Salary_After_Tax"] = df["Salary"] * 0.8
+grouped = df.groupby("Department")["Salary"].mean()
+print("\nAverage Salary by Department:")
+print(grouped)
+sorted_df = df.sort_values(by="Salary", ascending=False)
+print("\nTop 5 Highest Salaries:")
+print(sorted_df.head())
+df.to_csv("processed_data.csv", index=False)
+
+print("\nData processing complete!")
