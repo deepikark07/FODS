@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+# Line Plot
+plt.plot(x, y)
+plt.show()
+
+# Bar Plot
+plt.bar(x, y)
+plt.show()
+
+# Scatter Plot
+plt.scatter(x, y)
+plt.show()
